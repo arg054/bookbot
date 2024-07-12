@@ -29,7 +29,13 @@ def count_characters(file):
 def main():
     file_contents = "books/frankenstein.txt"
 
-    print(count_characters(read_file(file_contents)))
+    print(f"--- Begin report of {file_contents} ---")
+    print(f"{count_words(read_file(file_contents))} words found in the document")
+
+    for key, value in count_characters(read_file(file_contents)).items():
+        print(f"The '{key}' character was found {value} times")
+
+    print("--- End report ---")
 
 
 main()
